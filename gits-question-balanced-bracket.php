@@ -26,7 +26,7 @@ function checkBracket($input)
 		  $unpaired[] = $currentBracket;
 		}        
 	}
-
+    
   	if (empty($unpaired) && $count > 0) {
 		$outp = 'YES';
 	}
