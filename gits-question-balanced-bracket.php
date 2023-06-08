@@ -2,7 +2,7 @@
 
 function checkBracket($input)
 {
-	  $outp = 'NO';
+	$outp = 'NO';
     
     # whitespace removal
     $input = preg_replace('/\s+/', '', $input);
@@ -16,22 +16,22 @@ function checkBracket($input)
     ];
     for ($i = 0; $i < $count; $i++) {
     	$currentBracket = $input[$i];
-		  if (array_key_exists($currentBracket, $rightBracketPairMap)) {
-        	  if (end($unpaired) === $rightBracketPairMap[$currentBracket]) {
-            	array_pop($unpaired);
-            } else {
-            	break;
-            }
-        } else {
-			  $unpaired[] = $currentBracket;
+		if (array_key_exists($currentBracket, $rightBracketPairMap)) {
+			if (end($unpaired) === $rightBracketPairMap[$currentBracket]) {
+				array_pop($unpaired);
+			} else {
+				break;
+			}
+		} else {
+		  $unpaired[] = $currentBracket;
 		}        
 	}
 
-  if (empty($unpaired) && $count > 0) {
+  	if (empty($unpaired) && $count > 0) {
 		$outp = 'YES';
 	}
 
-  return $outp;
+  	return $outp;
 }
 
 # example of input
